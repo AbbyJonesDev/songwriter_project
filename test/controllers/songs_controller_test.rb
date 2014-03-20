@@ -2,7 +2,7 @@ require 'test_helper'
 
 class SongsControllerTest < ActionController::TestCase
   setup do
-    @song = songs(:one)
+    @song = FactoryGirl.create(:song)
   end
 
   test "should get index" do
@@ -18,7 +18,9 @@ class SongsControllerTest < ActionController::TestCase
 
   test "should create song" do
     assert_difference('Song.count') do
-      post :create, song: { chords: @song.chords, mp3: @song.mp3, title: @song.title, writeup: @song.writeup }
+      post :create, song: { chords_file_name: @song.chords_file_name, chords_content_type: @song.chords_content_type, 
+      chords_file_size: @song.chords_file_size, mp3_file_name: @song.mp3_file_name, mp3_content_type: @song.mp3_content_type,
+      mp3_file_size: @song.mp3_file_size, title: @song.title, writeup: @song.writeup }
     end
 
     assert_redirected_to song_path(assigns(:song))
@@ -35,7 +37,9 @@ class SongsControllerTest < ActionController::TestCase
   end
 
   test "should update song" do
-    patch :update, id: @song, song: { chords: @song.chords, mp3: @song.mp3, title: @song.title, writeup: @song.writeup }
+    patch :update, id: @song, song: { chords_file_name: @song.chords_file_name, chords_content_type: @song.chords_content_type, 
+      chords_file_size: @song.chords_file_size, mp3_file_name: @song.mp3_file_name, mp3_content_type: @song.mp3_content_type,
+      mp3_file_size: @song.mp3_file_size, title: @song.title, writeup: @song.writeup }
     assert_redirected_to song_path(assigns(:song))
   end
 

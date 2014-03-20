@@ -33,4 +33,10 @@ SongwriterProject::Application.configure do
 
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr
+
+  # Save Paperclip attachments to tmp file as suggested by 
+  # http://www.emersonlackey.com/article/unit-testing-paperclip
+  Paperclip::Attachment.default_options.merge!({
+  :path => "tmp/test/uploads/:style/:filename"
+})
 end
