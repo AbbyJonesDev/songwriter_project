@@ -30,6 +30,16 @@ gem 'jbuilder', '~> 1.2'
 # Use Paperclip to manage file attachments.  Read more: https://github.com/thoughtbot/paperclip
 gem "paperclip", "~> 4.1"
 
+group :test do
+  gem 'mocha'   # For mocks and stubs
+  gem 'shoulda'   # For shoulda validations
+  gem 'capybara'  # To simulate user interaction with browser
+end
+
+group :development, :test do
+  gem 'factory_girl_rails'
+end
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
