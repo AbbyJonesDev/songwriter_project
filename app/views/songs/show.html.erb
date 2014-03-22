@@ -12,12 +12,12 @@
 
 <p>
   <strong>Mp3:</strong>
-  <%= @song.mp3 %>
+  <%= audio_tag @song.mp3.url, controls: true, autobuffer: true %> 
 </p>
 
 <p>
   <strong>Chords:</strong>
-  <%= @song.chords %>
+    <%= link_to "Chord Chart", @song.chords.url, :target => "_blank" unless @song.chords_file_name == nil %>
 </p>
 
 <%= link_to 'Edit', edit_song_path(@song) %> |
