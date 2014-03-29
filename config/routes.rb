@@ -1,6 +1,7 @@
 SongwriterProject::Application.routes.draw do
-  get "static_pages/home"
-  get "static_pages/bio"
+  root 'static_pages#home'
+  get '/bio' => 'static_pages#bio'
+
   resources :songs
 
   # The priority is based upon order of creation: first created -> highest priority.
