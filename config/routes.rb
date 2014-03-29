@@ -1,4 +1,5 @@
 SongwriterProject::Application.routes.draw do
+  devise_for :admins
   root 'static_pages#home'
   get '/bio' => 'static_pages#bio'
 

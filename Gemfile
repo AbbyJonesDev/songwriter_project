@@ -25,6 +25,9 @@ gem 'jbuilder', '~> 1.2'
 # Use Paperclip to manage file attachments.  Read more: https://github.com/thoughtbot/paperclip
 gem "paperclip", "~> 4.1"
 
+# Use Devise for Admin and User authentication
+gem 'devise'
+
 group :development do
   gem 'coffee-rails', '~> 4.0.0'    # Use CoffeeScript for .js.coffee assets and views
   gem 'sass-rails', '~> 4.0.0'  # Use SCSS for stylesheets
