@@ -2,5 +2,8 @@
 
 FactoryGirl.define do
   factory :admin do
+    name "Admin"
+    email "admin@songwriterproject.music"
+    password "password"
   end
 end

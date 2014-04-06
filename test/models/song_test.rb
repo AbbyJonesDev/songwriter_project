@@ -46,5 +46,4 @@ class SongTest < ActiveSupport::TestCase
     assert !song.valid?, "Song should not accept html file for chord chart"
   end
 
-
 end
