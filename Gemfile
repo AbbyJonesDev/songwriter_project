@@ -37,11 +37,12 @@ end
 group :test do
   gem 'mocha'   # For mocks and stubs
   gem 'shoulda'   # For shoulda validations
-  gem 'capybara'  # To simulate user interaction with browser
 end
 
 group :development, :test do
   gem 'factory_girl_rails'
+  gem 'rspec-rails', '~> 3.0.0.beta'
+  gem 'capybara'  # To simulate user interaction with browser
   gem 'debugger'
 end
 
