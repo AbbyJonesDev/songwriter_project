@@ -37,12 +37,16 @@ end
 group :test do
   gem 'mocha'   # For mocks and stubs
   gem 'shoulda'   # For shoulda validations
+  gem 'launchy'   # To save and open page when debugging specs
 end
 
 group :development, :test do
   gem 'factory_girl_rails'
   gem 'rspec-rails', '~> 3.0.0.beta'
   gem 'capybara'  # To simulate user interaction with browser
+  gem 'capybara-webkit'  # For pages with JavaScript - so they load in real webpage
+  gem 'database_cleaner'  # To clean database after capybara-webkit messes it up
+  gem 'selenium-webdriver'   # For pages with JavaScript
   gem 'debugger'
 end
 

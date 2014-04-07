@@ -19,8 +19,11 @@
         <td><%= song.title %></td>
         <td><%= song.writeup %></td>
         <td><%= link_to 'Show', song %></td>
-        <td><%= link_to 'Edit', edit_song_path(song) %></td>
-        <td><%= link_to 'Destroy', song, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        
+        <% if admin_signed_in? %>
+          <td> <%= link_to 'Edit', edit_song_path(song) %></td>
+          <td><%= link_to 'Destroy', song, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +31,7 @@
 
 <br>
 
-<%= link_to 'New Song', new_song_path %>
+<% if admin_signed_in? %>
+  <%= link_to 'New Song', new_song_path %>
+<% end %>
+
