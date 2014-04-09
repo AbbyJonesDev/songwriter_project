@@ -1,9 +1,20 @@
 SongwriterProject::Application.routes.draw do
-  devise_for :admins
+  get "dashboard/index"
+  devise_for :admin
   root 'static_pages#home'
   get '/bio' => 'static_pages#bio'
 
+
   resources :songs
+
+
+  namespace :admin do |admin|
+    get '', to: 'dashboard#index', as: '/' 
+  end
+
+
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
