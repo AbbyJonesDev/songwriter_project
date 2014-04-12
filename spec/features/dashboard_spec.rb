@@ -55,20 +55,20 @@ feature "Manage resources from dashboard" do
       end
 
       it "Provides quick links to view a song" do
-        find(:xpath, "//tr[td[contains(.,'#{@song1.title}')]]/td/a", :text => 'View').click
+        click_on("View", match: :first)
         expect(current_path).to eq(song_path(@song1))
       end
 
       it "Provides quick links to update a song" do
-        find(:xpath, "//tr[td[contains(.,'#{@song2.title}')]]/td/a", :text => "Edit").click
-        expect(current_path).to eq(edit_song_path(@song2))
+        click_on("Edit", match: :first)
+        expect(current_path).to eq(edit_song_path(@song1))
       end
 
       it "Provides quick links to delete a song", js: true do
-        expect{    
+        expect do
+          click_link('Delete', match: :first)
           page.evaluate_script('window.confirm = function() { return true; }')
-          find(:xpath, "//tr[td[contains(.,'#{@song3.title}')]]/td/a", text: "Delete").click
-        }.to change(Song, :count).by(-1)
+        end.to change(Song, :count).by(-1)
       end
 
       it "Makes adding a new song easy" do
