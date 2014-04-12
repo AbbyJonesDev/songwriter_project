@@ -9,7 +9,7 @@ class Song < ActiveRecord::Base
 
   has_attached_file :chords
   validates_attachment :chords,
-    :content_type => { :content_type => 'application/pdf' },
-    :file_name => { :matches => [/pdf\Z/] }
+    :content_type => { :content_type => 'application/pdf', message: "must be in pdf format" },
+    :file_name => { :matches => [/pdf\Z/], message: "must end in pdf" }
   
 end

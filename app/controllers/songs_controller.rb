@@ -30,6 +30,8 @@ class SongsController < ApplicationController
       flash[:notice] = "Song was successfully created"
       redirect_to @song
     else
+      # Prevent Paperclip from producing duplicate errors
+      @song.errors.delete(:chords) && @song.errors.delete(:mp3) 
       render action: 'new'
     end
   end
@@ -42,6 +44,8 @@ class SongsController < ApplicationController
       flash[:notice] = "Song was successfully updated"
       redirect_to @song
     else
+      # Prevent Paperclip from producing duplicate errors
+      @song.errors.delete(:chords) && @song.errors.delete(:mp3)
       render action: "edit"
     end
   end
