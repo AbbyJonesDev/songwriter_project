@@ -26,29 +26,25 @@ class SongsController < ApplicationController
   # POST /songs.json
   def create
     @song = Song.new(song_params)
-
-    respond_to do |format|
-      if @song.save
-        format.html { redirect_to @song, notice: 'Song was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @song }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @song.errors, status: :unprocessable_entity }
-      end
+    if @song.save
+      flash[:notice] = "Song was successfully created"
+      redirect_to @song
+    else
+      flash[:warning] = @song.errors.full_messages
+      render action: 'new'
     end
   end
 
   # PATCH/PUT /songs/1
   # PATCH/PUT /songs/1.json
   def update
-    respond_to do |format|
-      if @song.update(song_params)
-        format.html { redirect_to @song, notice: 'Song was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @song.errors, status: :unprocessable_entity }
-      end
+    @song = Song.find params[:id]
+    if @song.update(song_params)
+      flash[:notice] = "Song was successfully updated"
+      redirect_to @song
+    else
+      flash[:warning] = @song.errors.full_messages
+      render action: "edit"
     end
   end
 
