@@ -1,2 +1,25 @@
-<h1>Admin::Dashboard#index</h1>
-<p>Find me in app/views/admin/dashboard/index.html.erb</p>
+<h1> Dashboard </h1>
+
+
+<h2> Manage Songs </h2>
+
+<table>
+  <thead>
+    <tr>
+      <th> Title </th>  
+      <th> Last Updated </th>
+    </tr>
+  </thead>
+
+  <% @songs.each do | song | %>
+    <tr>
+      <td> <%= song.title %> </td>
+      <td> <%= link_to "View", song, :class => "view_song_#{song.id}" %>  </td>
+      <td> <%= link_to "Edit", edit_song_path(song), :class => "edit_song_#{song.id}" %>  </td>
+      <td> <%= link_to "Delete", song, method: :delete, data: { confirm: "Are you sure you want to delete this song?" },
+        :class => "delete_song_#{song.id}" %>  </td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to "Add Song", new_song_path %>
