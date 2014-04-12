@@ -1,18 +1,5 @@
-<% if !flash.empty? %>
-  <div class="flash">
-    <% flash.each do | name, msg | %>
-      <% if msg.is_a?(String) %>
-        <%= msg %>
-      <% else %>
-        <ul>
-        <% flash[name].each do | msg | %>
-          <li>
-            <%= msg %>
-          </li>
-        <% end %>
-        </ul>
-      <% end %>      
-    <% end %>
-  </div>
-<% end %>
-
+<div class="alerts">
+  <%- flash.each do |name, msg| -%>
+    <%= content_tag :div, msg, id: "flash_#{name}" if msg.is_a?(String) %>
+  <%- end -%>
+</div>
