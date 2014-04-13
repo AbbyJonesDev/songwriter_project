@@ -33,7 +33,7 @@ Deployment Steps:
 
 * Optional: Add an admin, songs, or articles to db/seeds.rb and run bundle exec rake db:seed
 
-* If you have not done so already, create an admin via the command line
+* If you have not done so already, create an admin via the command line or the console
 
 * Bundle exec rake secret (to create a new secret token)
 
