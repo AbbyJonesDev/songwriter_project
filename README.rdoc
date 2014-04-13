@@ -1,28 +1,22 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Welcome to the Songwriter Project.  This Rails application is meant for songwriters
+to share their music and connect with listeners.  Components will include song uploads,
+chord charts, a blog, comments, and an admin dashboard to make it easy for the site 
+owner to add and update music and articles.  
 
-Things you may want to cover:
+The project uses:
 
-* Ruby version
+* Ruby version 2.0.0-p0
 
-* System dependencies
+* Rails 4.0.4
 
-* Configuration
+* Paperclip to manage file attachments
 
-* Database creation
+* Devise to manage users
 
-* Database initialization
+* Postgresql 
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Rspec for unit and integration tests (Run full suite with "bundle exec rspec")
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
