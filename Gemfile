@@ -41,6 +41,7 @@ group :test do
 end
 
 group :development, :test do
+  gem 'dotenv-rails'  # To manage personal environment variables
   gem 'factory_girl_rails'
   gem 'rspec-rails', '~> 3.0.0.beta'
   gem 'capybara'  # To simulate user interaction with browser
@@ -59,7 +60,7 @@ end
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
 
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
