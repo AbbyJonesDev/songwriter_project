@@ -10,6 +10,8 @@ SongwriterProject::Application.routes.draw do
 
   namespace :admin do |admin|
     get '', to: 'dashboard#index', as: '/' 
+    get '/account', to: "dashboard#edit_account"
+    patch '/account', to: "dashboard#update_account"
   end
 
 
