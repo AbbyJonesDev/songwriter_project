@@ -19,4 +19,21 @@ The project uses:
 
 * Rspec for unit and integration tests (Run full suite with "bundle exec rspec")
 
+Deployment Steps:
+
+* Create config/database.yml and add your database information
+
+* Install bundler
+
+* Bundle install
+
+* Bundle exec rake db:create
+
+* Bundle exec rake db:migrate
+
+* Optional: Add an admin, songs, or articles to db/seeds.rb and run bundle exec rake db:seed
+
+* If you have not done so already, create an admin via the command line
+
+* Bundle exec rake secret (to create a new secret token)
 
