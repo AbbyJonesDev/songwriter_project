@@ -15,7 +15,7 @@ class Admin::DashboardController < ApplicationController
       flash[:notice] = "Account updated successfully"
       redirect_to(admin_path)
     else
-      render "admin_account_path"
+      render action: 'edit_account'
     end
   end
 
