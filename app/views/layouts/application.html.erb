@@ -1,27 +1,30 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>SongwriterProject</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <%= render "layouts/messages" %>
-  
+    <title> Songwriter Project </title>
 
-<%= yield %>
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= csrf_meta_tags %>
+  </head>
 
-  <footer>
-    <% if admin_signed_in? %>
-      <%= link_to "Dashboard", admin_path %>
-      <%= link_to "Log out", destroy_admin_session_path, method: :delete %>
-    <% else %> 
-      <%= link_to "Admin Login", new_admin_session_path %>
-    <% end %>
-  </footer>
+  <body>
+    <%= render "layouts/messages" %>
 
-</body>
+    <%= yield %>
 
+    <footer>
+      <% if admin_signed_in? %>
+        <%= link_to "Dashboard", admin_path %>
+        <%= link_to "Log out", destroy_admin_session_path, method: :delete %>
+      <% else %> 
+        <%= link_to "Admin Login", new_admin_session_path %>
+      <% end %>
+    </footer>
+
+    <%= javascript_include_tag "application" %>
+  </body>
 </html>

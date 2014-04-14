@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SongwriterProject</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <%= render "layouts/messages" %>
+  
+
+<%= yield %>
+
+  <footer>
+    <% if admin_signed_in? %>
+      <%= link_to "Dashboard", admin_path %>
+      <%= link_to "Log out", destroy_admin_session_path, method: :delete %>
+    <% else %> 
+      <%= link_to "Admin Login", new_admin_session_path %>
+    <% end %>
+  </footer>
+
+</body>
+
+</html>
