@@ -6,6 +6,8 @@ gem 'rails', '4.0.4'
 # Use pg as the database for Active Record
 gem 'pg'
 
+# Use Figaro to load ENV variables for given environment
+gem 'figaro'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -27,6 +29,9 @@ gem 'jbuilder', '~> 1.2'
 
 # Use Paperclip to manage file attachments.  Read more: https://github.com/thoughtbot/paperclip
 gem "paperclip", "~> 4.1"
+
+# Use Amazon Web Services S3 storage for file attachments
+gem 'aws-sdk'
 
 # Use Devise for Admin and User authentication
 gem 'devise'
