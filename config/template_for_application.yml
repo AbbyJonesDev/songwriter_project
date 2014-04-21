@@ -11,16 +11,19 @@
 
 
 # PRODUCTION VALUES
+production:
+  #  Credentials for S3 storage on Amazon
+  S3_BUCKET_NAME: "your bucket name"
+  AWS_ACCESS_KEY_ID: "your aws access key id"
+  AWS_SECRET_ACCESS_KEY: "your aws secret access key"
 
-#  Credentials S3 storage on Amazon
-S3_BUCKET_NAME: "your bucket name"
-AWS_ACCESS_KEY_ID: "your aws access key id"
-AWS_SECRET_ACCESS_KEY: "your aws secret access key"
+
 
 
 
 # DEVELOPMENT VALUES
 development:
+  #  Credentials for S3 storage on Amazon
   S3_BUCKET_NAME: "your bucket name"
   AWS_ACCESS_KEY_ID: "your aws access key id"
   AWS_SECRET_ACCESS_KEY: "your aws secret access key"
@@ -32,6 +35,7 @@ development:
 
 # TEST VALUES
 test:
+  #  Credentials for S3 storage on Amazon
   S3_BUCKET_NAME: "your bucket name"
   AWS_ACCESS_KEY_ID: "your aws access key id"
   AWS_SECRET_ACCESS_KEY: "your aws secret access key"
