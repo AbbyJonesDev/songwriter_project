@@ -34,6 +34,9 @@ SongwriterProject::Application.configure do
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr
 
+  # Load AWS credentials from config/application.yml
+  # NOTE = data will only be sent to AWS if you comment out
+  # the lines below.
   config.paperclip_defaults = {
   :storage => :s3,
   :s3_credentials => {
@@ -42,10 +45,11 @@ SongwriterProject::Application.configure do
     :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
   }
 }
-
   # Save Paperclip attachments to tmp file as suggested by 
   # http://www.emersonlackey.com/article/unit-testing-paperclip
-#   Paperclip::Attachment.default_options.merge!({
-#   :path => "tmp/test/uploads/:style/:filename"
-# })
+  # Comment these lines out if/when you want to send a live
+  # HTTP request to AWS for a full integration test
+  Paperclip::Attachment.default_options.merge!({
+  :path => "tmp/test/uploads/:style/:filename"
+})
 end
