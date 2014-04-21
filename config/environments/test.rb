@@ -34,9 +34,18 @@ SongwriterProject::Application.configure do
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr
 
+  config.paperclip_defaults = {
+  :storage => :s3,
+  :s3_credentials => {
+    :bucket => ENV['S3_BUCKET_NAME'],
+    :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+    :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+  }
+}
+
   # Save Paperclip attachments to tmp file as suggested by 
   # http://www.emersonlackey.com/article/unit-testing-paperclip
-  Paperclip::Attachment.default_options.merge!({
-  :path => "tmp/test/uploads/:style/:filename"
-})
+#   Paperclip::Attachment.default_options.merge!({
+#   :path => "tmp/test/uploads/:style/:filename"
+# })
 end
