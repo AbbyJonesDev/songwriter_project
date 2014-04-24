@@ -1,4 +1,6 @@
 SongwriterProject::Application.routes.draw do
+  resources :articles
+
   get "dashboard/index"
   devise_for :admin
   root 'static_pages#home'
