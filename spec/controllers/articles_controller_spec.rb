@@ -84,14 +84,14 @@ describe ArticlesController do
     describe "with invalid params" do
       it "assigns a newly created but unsaved article as @article" do
         # Trigger the behavior that occurs when invalid params are submitted
-        allow_any_instance_of(Article).to receive(:save).and_return(false)
+        Article.any_instance.stubs(:save).returns(false)
         post :create, {:article => { "title" => "invalid value" }}, valid_session
         expect(assigns(:article)).to be_a_new(Article)
       end
 
       it "re-renders the 'new' template" do
         # Trigger the behavior that occurs when invalid params are submitted
-        allow_any_instance_of(Article).to receive(:save).and_return(false)
+        Article.any_instance.stubs(:save).returns(false)
         post :create, {:article => { "title" => "invalid value" }}, valid_session
         expect(response).to render_template("new")
       end
@@ -106,7 +106,7 @@ describe ArticlesController do
         # specifies that the Article created on the previous line
         # receives the :update_attributes message with whatever params are
         # submitted in the request.
-        expect_any_instance_of(Article).to receive(:update).with({ "title" => "MyString" })
+        Article.any_instance.expects(:update).with({ "title" => "MyString" })
         put :update, {:id => article.to_param, :article => { "title" => "MyString" }}, valid_session
       end
 
@@ -127,7 +127,7 @@ describe ArticlesController do
       it "assigns the article as @article" do
         article = Article.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
-        allow_any_instance_of(Article).to receive(:save).and_return(false)
+        Article.any_instance.stubs(:save).returns(false)
         put :update, {:id => article.to_param, :article => { "title" => "invalid value" }}, valid_session
         expect(assigns(:article)).to eq(article)
       end
@@ -135,7 +135,7 @@ describe ArticlesController do
       it "re-renders the 'edit' template" do
         article = Article.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
-        allow_any_instance_of(Article).to receive(:save).and_return(false)
+        Article.any_instance.stubs(:save).returns(false)
         put :update, {:id => article.to_param, :article => { "title" => "invalid value" }}, valid_session
         expect(response).to render_template("edit")
       end
