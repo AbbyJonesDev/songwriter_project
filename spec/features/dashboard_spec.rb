@@ -3,6 +3,14 @@ Warden.test_mode!
 
 
 feature "Manage resources from dashboard" do 
+
+  let!(:song1) { FactoryGirl.create(:song, title: "Song 1") }
+  let!(:song2) { FactoryGirl.create(:song, title: "Song 2") }
+  let!(:song3) { FactoryGirl.create(:song, title: "Song 3") }
+  let!(:article1) { FactoryGirl.create(:article, title: "Article 1") }
+  let!(:article2) { FactoryGirl.create(:article, title: "Article 2") }
+  let!(:article3) { FactoryGirl.create(:article, title: "Article 3") }
+
   before :each do
     @admin = FactoryGirl.create(:admin)
   end
@@ -32,9 +40,6 @@ feature "Manage resources from dashboard" do
 
   context "When logged in as admin" do
     before :each do
-      @song1 = FactoryGirl.create(:song, title: "Song 1")
-      @song2 = FactoryGirl.create(:song, title: "Song 2")
-      @song3 = FactoryGirl.create(:song, title: "Song 3")
       login_admin
     end
 
@@ -68,20 +73,20 @@ feature "Manage resources from dashboard" do
     describe "Manage songs" do
 
       it "Shows a list of all songs" do
-        @songs = [ @song1, @song2, @song3 ]
-        @songs.each do | song |
+        songs = [ song1, song2, song3 ]
+        songs.each do | song |
           expect(page).to have_content(song.title)
         end
       end
 
       it "Provides quick links to view a song" do
         click_on("View", match: :first)
-        expect(current_path).to eq(song_path(@song1))
+        expect(current_path).to eq(song_path(song1))
       end
 
       it "Provides quick links to update a song" do
         click_on("Edit", match: :first)
-        expect(current_path).to eq(edit_song_path(@song1))
+        expect(current_path).to eq(edit_song_path(song1))
       end
 
       it "Provides quick links to delete a song", js: true do

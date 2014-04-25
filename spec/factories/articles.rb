@@ -2,11 +2,11 @@
 
 FactoryGirl.define do
   factory :article do
-    title "MyString"
-    content "MyText"
+    title "Article"
+    content "Content of article"
     admin_id 1
-    writer "MyString"
-    keywords "MyString"
+    writer "Writer"
+    keywords "keyword1, keyword2"
     published false
   end
 end
