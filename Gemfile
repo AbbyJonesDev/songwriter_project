@@ -66,6 +66,8 @@ group :development, :test do
   gem 'debugger'
 end
 
+gem 'rails_12factor', group: :production # To make app work on Heroku
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', :require => false
