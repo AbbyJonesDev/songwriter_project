@@ -39,6 +39,9 @@ gem 'aws-sdk'
 # Use Devise for Admin and User authentication
 gem 'devise'
 
+# Use tinyMCE to add rich text editor for blog posts
+gem 'tinymce-rails'
+
 
 
 group :development do

@@ -1,0 +1,7 @@
+menubar: format | edit | table   
+toolbar1: fontselect | fontsizeselect | forecolor | bold italic underline | undo redo | alignleft aligncenter alignright alignjustify | link
+plugins:
+  - table
+  - fullscreen
+  - link
+  - textcolor
