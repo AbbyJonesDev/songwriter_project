@@ -17,12 +17,12 @@
     <% @songs.each do |song| %>
       <tr>
         <td><%= song.title %></td>
-        <td><%= song.writeup %></td>
+        <td><%=raw song.writeup %></td>
         <td><%= link_to 'Show', song %></td>
         
         <% if admin_signed_in? %>
           <td> <%= link_to 'Edit', edit_song_path(song) %></td>
-          <td><%= link_to 'Destroy', song, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Delete', song, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
       </tr>
     <% end %>

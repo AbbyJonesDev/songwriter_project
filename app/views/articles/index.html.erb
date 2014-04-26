@@ -20,7 +20,7 @@
     <% @articles.each do |article| %>
       <tr>
         <td><%= article.title %></td>
-        <td><%= article.content %></td>
+        <td><%=raw article.content %></td>
         <td><%= article.admin_id %></td>
         <td><%= article.writer %></td>
         <td><%= article.keywords %></td>
