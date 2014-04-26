@@ -18,7 +18,7 @@
   </div>
   <div class="field">
     <%= f.label :writeup %><br>
-    <%= f.text_area :writeup %>
+    <%= f.text_area :writeup, :class => 'tinymce' %>
   </div>
   <div class="field">
     <%= f.label :mp3 %><br>
@@ -32,3 +32,6 @@
     <%= f.submit %>
   </div>
 <% end %>
+
+<!-- Initialize tinymce for writeup area -->
+<%= tinymce %>
