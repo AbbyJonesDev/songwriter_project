@@ -42,9 +42,12 @@ RSpec.configure do |config|
   # the seed, which is printed after each run.
   #     --seed 1234
   config.order = "random"
+
+  # Setup for testing with Devise
   config.include Devise::TestHelpers, type: :controller
   config.include Warden::Test::Helpers
-
+  config.extend ControllerMacros, :type => :controller
+  
   # Setup for capybara-webkit and testing with JavaScript
   config.before(:each) do |example|
     DatabaseCleaner.strategy = example.metadata[:js] ? :truncation : :transaction

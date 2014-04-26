@@ -3,6 +3,7 @@ class Admin::DashboardController < ApplicationController
 
   def index
     @songs = Song.all
+    @articles = Article.article_list
   end
 
   def edit_account
