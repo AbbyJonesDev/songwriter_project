@@ -141,7 +141,7 @@ feature "Manage resources from dashboard" do
       it "Makes adding a new article easy" do
         click_on("Create New Article")
         fill_in_valid_article
-        check("Publish")
+        check("Publish Now?")
         click_on("Create")
         expect(page).to have_selector('div', text: "Article was successfully created.")
       end

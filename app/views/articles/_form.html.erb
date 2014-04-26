@@ -20,7 +20,7 @@
     <%= f.text_area :content %>
   </div>
   <div class="field">
-    <%= f.label "Author" %><br>
+    <%= f.label :writer, "Author" %><br>
     <%= f.text_field :writer, value: current_admin.name %>
   </div>
   <div class="field">
@@ -28,7 +28,7 @@
     <%= f.text_field :keywords %>
   </div>
   <div class="field">
-    <%= f.label "Publish Now (Leave unchecked to save draft)" %><br>
+    <%= f.label :published, "Publish Now?" %><br>
     <%= f.check_box :published %>
   </div>
   <div class="actions">
