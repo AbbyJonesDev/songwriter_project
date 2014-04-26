@@ -55,7 +55,7 @@ class SongsController < ApplicationController
   def destroy
     @song.destroy
     respond_to do |format|
-      format.html { redirect_to request.referrer == admin_path ? admin_path : songs_url }
+      format.html { redirect_to request.referrer == admin_url ? admin_path : songs_url }
       format.json { head :no_content }
     end
   end
