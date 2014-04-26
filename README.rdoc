@@ -13,6 +13,8 @@ The project uses:
 
 * Paperclip to manage file attachments
 
+* Amazon's S3 storage for file attachments
+
 * Devise to manage users
 
 * Postgresql 
@@ -22,6 +24,8 @@ The project uses:
 Deployment Steps:
 
 * Create config/database.yml and add your database information
+
+* Use config/template_for_application.yml to create a config/application.yml with your credentials
 
 * Install bundler
 
@@ -36,4 +40,8 @@ Deployment Steps:
 * If you have not done so already, create an admin via the command line or the console
 
 * Bundle exec rake secret (to create a new secret token)
+
+Test Notes:
+
+* See comments in config/environments/test.rb for info on configuring file storage for tests
 

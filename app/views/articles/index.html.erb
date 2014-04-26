@@ -1,0 +1,41 @@
+<h1>Listing articles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Content</th>
+      <th>Admin</th>
+      <th>Writer</th>
+      <th>Keywords</th>
+      <th></th>
+      <% if current_admin %>
+        <th></th>
+        <th></th>
+      <% end %>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @articles.each do |article| %>
+      <tr>
+        <td><%= article.title %></td>
+        <td><%= article.content %></td>
+        <td><%= article.admin_id %></td>
+        <td><%= article.writer %></td>
+        <td><%= article.keywords %></td>
+        <td><%= link_to 'Show', article %></td>
+        <% if current_admin %>
+          <td><%= link_to 'Edit', edit_article_path(article) %></td>
+          <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<% if current_admin %>
+  <%= link_to 'New Article', new_article_path %>
+<% end %>

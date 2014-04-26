@@ -15,8 +15,19 @@
 /log/*.log
 /tmp
 
-# Ignore .env file with personal environment variables
+# Ignore confidential environment variables
+application.yml
 .env
+
+# Ignore RubyMine project files
+.idea
+/.idea/*
+
+# Ignore Textmate project files
+/*.tmproj
+
+# Ignore vim artifacts
+**.swp
 
 # Suggested files to ignore in official guide
 # https://github.com/github/gitignore/blob/master/Rails.gitignore
@@ -27,7 +38,6 @@
 capybara-*.html
 .rspec
 .rvmrc
-/.bundle
 /vendor/bundle
 /public/system/*
 /coverage/
