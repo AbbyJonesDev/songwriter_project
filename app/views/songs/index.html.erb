@@ -1,25 +1,21 @@
-<h1>Listing songs</h1>
+<h1 class="text-center"> Songs </h1>
 
-<table>
+<table class="text-center">
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Writeup</th>
-      <th>Mp3</th>
-      <th>Chords</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th> Title </th>
+      <th> Description </th>
+      <% if admin_signed_in? %>
+        <th colspan=2> Manage </th>
+      <% end %>
     </tr>
   </thead>
 
   <tbody>
     <% @songs.each do |song| %>
       <tr>
-        <td><%= song.title %></td>
-        <td><%=raw song.writeup %></td>
-        <td><%= link_to 'Show', song %></td>
-        
+        <td><%= link_to song.title, song %></td>
+        <td><%=raw song.writeup %></td>        
         <% if admin_signed_in? %>
           <td> <%= link_to 'Edit', edit_song_path(song) %></td>
           <td><%= link_to 'Delete', song, method: :delete, data: { confirm: 'Are you sure?' } %></td>

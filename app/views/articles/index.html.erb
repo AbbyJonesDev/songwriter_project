@@ -1,17 +1,14 @@
-<h1>Listing articles</h1>
+<h1 class="text-center"> Articles </h1>
 
-<table>
+<table class="text-center">
   <thead>
     <tr>
       <th>Title</th>
       <th>Content</th>
-      <th>Admin</th>
       <th>Writer</th>
       <th>Keywords</th>
-      <th></th>
       <% if current_admin %>
-        <th></th>
-        <th></th>
+        <th colspan=2> Manage </th>
       <% end %>
     </tr>
   </thead>
@@ -19,15 +16,13 @@
   <tbody>
     <% @articles.each do |article| %>
       <tr>
-        <td><%= article.title %></td>
+        <td><%= link_to article.title, article %></td>
         <td><%=raw article.content %></td>
-        <td><%= article.admin_id %></td>
         <td><%= article.writer %></td>
         <td><%= article.keywords %></td>
-        <td><%= link_to 'Show', article %></td>
         <% if current_admin %>
           <td><%= link_to 'Edit', edit_article_path(article) %></td>
-          <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Delete', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
       </tr>
     <% end %>

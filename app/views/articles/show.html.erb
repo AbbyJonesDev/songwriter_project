@@ -1,35 +1,31 @@
-<p>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</p>
+<div class="panel">
+  <h1>
+    <%= @article.title %>
+  </h1>
 
-<p>
-  <strong>Content:</strong>
-  <%=raw @article.content %>
-</p>
-
-<p>
-  <strong>Admin:</strong>
-  <%= @article.admin_id %>
-</p>
-
-<p>
-  <strong>Writer:</strong>
-  <%= @article.writer %>
-</p>
-
-<p>
-  <strong>Keywords:</strong>
-  <%= @article.keywords %>
-</p>
-
-<% if current_admin %>
   <p>
-    <strong>Published:</strong>
-    <%= @article.published %>
+    <%=raw @article.content %>
   </p>
 
-  <%= link_to 'Edit', edit_article_path(@article) %> |
-<% end %>
+  <p>
+    <i>Writer:</i>
+    <%= @article.writer %>
+  </p>
+
+  <p>
+    <strong>Keywords:</strong>
+    <%= @article.keywords %>
+  </p>
+
+  <% if current_admin %>
+    <p>
+      <strong>Published:</strong>
+      <%= @article.published %>
+    </p>
+
+    <%= link_to 'Edit', edit_article_path(@article) %> |
+  <% end %>
+
+</div>
 
 <%= link_to 'Back', articles_path %>

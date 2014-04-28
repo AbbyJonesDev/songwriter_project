@@ -1,24 +1,26 @@
-<p>
-  <strong>Title:</strong>
-  <%= @song.title %>
-</p>
+<div class="panel">
+  <h1 class="text-center">
+    <%= @song.title %>
+  </h1>
 
-<p>
-  <strong>Writeup:</strong>
-  <%=raw @song.writeup %>
-</p>
+  <p>
+    <strong> Description: </strong>
+    <%=raw @song.writeup %>
+  </p>
 
-<p>
-  <strong>Mp3:</strong>
-  <%= audio_tag @song.mp3.url, controls: true, autobuffer: true %> 
-</p>
+  <p>
+    <%= audio_tag @song.mp3.url, controls: true, autobuffer: true %> 
+  </p>
 
-<p>
-  <strong>Chords:</strong>
-    <%= link_to "Chord Chart", @song.chords.url, :target => "_blank" unless @song.chords_file_name == nil %>
-</p>
+  <p>
+    <strong>Chords:</strong>
+      <%= link_to "Chord Chart", @song.chords.url, :target => "_blank" unless @song.chords_file_name == nil %>
+  </p>
 
-<% if admin_signed_in? %>
-  <%= link_to 'Edit', edit_song_path(@song) %> |
-<% end %>
+  <% if admin_signed_in? %>
+    <%= link_to 'Edit', edit_song_path(@song) %> 
+  <% end %>
+
+</div>
+
 <%= link_to 'Back', songs_path %>

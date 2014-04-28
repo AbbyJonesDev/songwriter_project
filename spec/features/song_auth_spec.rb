@@ -65,7 +65,7 @@ feature "Admin must be logged in to create or update songs" do
     scenario "delete a song", :js => true do
       visit songs_path
       page.evaluate_script('window.confirm = function() { return true; }')
-      click_on("Destroy")
+      click_on("Delete")
       expect(current_path).to eq(songs_path)
       expect(page).to have_no_content(@song.title)
     end

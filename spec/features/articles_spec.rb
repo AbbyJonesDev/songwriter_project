@@ -62,7 +62,7 @@ feature "Articles that rock" do
     scenario "delete an article", :js => true do
       visit articles_path
       page.evaluate_script('window.confirm = function() { return true; }')
-      click_on("Destroy", match: :first)
+      click_on("Delete", match: :first)
       expect(current_path).to eq(articles_path)
       expect(page).to have_no_content(article1.title)
     end
