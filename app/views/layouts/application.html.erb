@@ -13,18 +13,29 @@
   </head>
 
   <body>
-    <%= render "layouts/messages" %>
+      <%= render "layouts/messages" %>
 
-    <%= yield %>
+      <div class="banner panel">
+        <h1 class="text-center"> Songwriter Project </h1>
+      </div>
 
-    <footer>
-      <% if admin_signed_in? %>
-        <%= link_to "Dashboard", admin_path %> <br>
-        <%= link_to "Log out", destroy_admin_session_path, method: :delete %>
-      <% else %> 
-        <%= link_to "Admin Login", new_admin_session_path %>
-      <% end %>
-    </footer>
+    <div class="row">
+      <div class="medium-3 columns">
+        <%= render 'layouts/navigation' %>
+      </div>
 
+      <div class="medium-9 columns">
+        <%= yield %>   <!-- Body -->
+      </div> 
+    </div>
+    
+      <footer>
+        <% if admin_signed_in? %>
+          <%= link_to "Dashboard", admin_path %> <br>
+          <%= link_to "Log out", destroy_admin_session_path, method: :delete %>
+        <% else %> 
+          <%= link_to "Admin Login", new_admin_session_path %>
+        <% end %>
+      </footer>
   </body>
 </html>

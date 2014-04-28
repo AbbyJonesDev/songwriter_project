@@ -9,10 +9,6 @@
 // This is the default html and body font-size for the base rem value.
 // $rem-base: 16px;
 
-body {
-  width: 90%;
-  margin: 0 auto !important;
-}
 
 // Allows the use of rem-calc() or lower-bound() in your settings
 @import "foundation/functions";
@@ -38,7 +34,7 @@ body {
 // $include-html-grid-classes: $include-html-classes;
 // $include-xl-html-grid-classes: false;
 
-// $row-width: rem-calc(1000);
+$row-width: 100%;
 // $total-columns: 12;
 
 // Global
@@ -949,7 +945,7 @@ $panel-font-color: $secondary-color;
 // $include-html-nav-classes: $include-html-classes;
 
 // We use this to control padding.
-// $side-nav-padding: rem-calc(14 0);
+$side-nav-padding: rem-calc(14 14);
 
 // We use these to control list styles.
 // $side-nav-list-type: none;
@@ -957,11 +953,11 @@ $panel-font-color: $secondary-color;
 // $side-nav-list-margin: rem-calc(0 0 7 0);
 
 // We use these to control link styles.
-// $side-nav-link-color: $primary-color;
+$side-nav-link-color: $secondary-color;
 // $side-nav-link-color-active: scale-color($side-nav-link-color, $lightness: 30%);
 // $side-nav-link-color-hover: scale-color($side-nav-link-color, $lightness: 30%);
 // $side-nav-font-size: rem-calc(14);
-// $side-nav-font-weight: normal;
+$side-nav-font-weight: bold;
 // $side-nav-font-weight-active: $side-nav-font-weight;
 // $side-nav-font-family: $body-font-family;
 // $side-nav-active-font-family: $side-nav-font-family;
