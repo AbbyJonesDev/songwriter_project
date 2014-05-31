@@ -1,0 +1,19 @@
+html {
+  
+}
+
+body {
+  width: 90%;
+  margin: 0 auto !important;
+
+  background-image: image-url("wooden_wall_background.jpg");
+  background-size: cover;
+  -webkit-background-size: cover;  
+  -moz-background-size: cover;  
+  -o-background-size: cover;  
+}
+
+.banner > h1 {
+  font-family: "Georgia", "Book Antiqua", serif;
+  font-weight: bold;
+}
