@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title> Songwriter Project </title>
+    <title>Brian May Music</title>
 
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
@@ -13,29 +13,20 @@
   </head>
 
   <body>
-    <div class="banner panel">
-      <h1 class="text-center"> Songwriter Project </h1>
-    </div>
-
-    <%= render 'layouts/messages' %>
     
     <div class="row">
-      <div class="medium-3 columns">
-        <%= render 'layouts/navigation' %>
-      </div>
+      <div class="medium-10 medium-offset-1 columns">
 
-      <div class="medium-9 columns">
-        <%= yield %>   <!-- Body -->
-      </div> 
+        <%= render 'layouts/messages' %>
+
+        <%= yield %>   <!-- Body --> 
+
+        <footer>
+          <%= render 'layouts/navigation' %>
+        </footer>
+
+      </div>
     </div>
-    
-      <footer>
-        <% if admin_signed_in? %>
-          <%= link_to "Dashboard", admin_path %> <br>
-          <%= link_to "Log out", destroy_admin_session_path, method: :delete %>
-        <% else %> 
-          <%= link_to "Admin Login", new_admin_session_path %>
-        <% end %>
-      </footer>
+  
   </body>
 </html>

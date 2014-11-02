@@ -1,19 +1,23 @@
-html {
-  
-}
-
 body {
-  width: 90%;
-  margin: 0 auto !important;
-
-  background-image: image-url("wooden_wall_background.jpg");
-  background-size: cover;
-  -webkit-background-size: cover;  
-  -moz-background-size: cover;  
-  -o-background-size: cover;  
+  // background-image: image-url("background_texture.png");
 }
 
-.banner > h1 {
-  font-family: "Georgia", "Book Antiqua", serif;
-  font-weight: bold;
+nav {
+  color: $header-font-color;
+  font-family: $header-font-family;
+  text-align: center;
+  margin-top: rem-calc(24px);
+
+  ul.main-nav {
+    background-color: $secondary-color;
+    list-style-type: none;
+    margin-left: 0;
+    padding: rem-calc(15px) 0;
+
+    li {      
+      display: inline;
+      font-size: $h3-font-size;
+      margin: 0 rem-calc(20px);
+    }
+  }
 }

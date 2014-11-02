@@ -12,7 +12,8 @@ class Admin::DashboardController < ApplicationController
 
   def update_account
     @admin = Admin.find(current_admin.id)
-    if @admin.update(admin_params)
+    if @admin.update_with_password(admin_params)
+      sign_in(@admin, :bypass => true)
       flash[:notice] = "Account updated successfully"
       redirect_to(admin_path)
     else
@@ -24,6 +25,7 @@ class Admin::DashboardController < ApplicationController
   private
 
   def admin_params
-    params.require(:admin).permit(:name, :email, :password, :password_confirmation)
+    params.require(:admin).permit(:name, :email, :password, 
+      :password_confirmation, :current_password)
   end
 end

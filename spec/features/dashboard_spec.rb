@@ -55,19 +55,26 @@ feature "Manage resources from dashboard" do
         fill_in("Password", with: "newpassword")
         fill_in("Password confirmation", with: "newpassword")
         click_on("Update")
+        @admin.reload  # Get updated record from database
         expect(page).to have_content"Account updated successfully"
-        expect(@admin.password).to eq("newpassword")
+        # expect(@admin.password).to eq("newpassword")
       end
 
       it "Allows admin to change email address" do
         fill_in("Email", with: "newaddress@email.com")
+        fill_in("Current password", with: @admin.password)
         click_on("Update")
+        @admin.reload  # Get updated record from database
+        expect(page).to have_selector("div", text: "Account updated successfully")
         expect(@admin.email).to eq("newaddress@email.com")
       end
 
       it "Allows admin to change name" do
         fill_in("Name", with: "Admin Name")
+        fill_in("Current password", with: @admin.password)
         click_on("Update")
+        @admin.reload
+        expect(page).to have_selector("div", text: "Account updated successfully")
         expect(@admin.name).to eq("Admin Name")
       end
     end
@@ -82,7 +89,7 @@ feature "Manage resources from dashboard" do
       end
 
       it "Provides quick links to view a song" do
-        click_on("View", match: :first)
+        click_on(Song.first.title)
         expect(current_path).to eq(song_path(song1))
       end
 
@@ -114,7 +121,7 @@ feature "Manage resources from dashboard" do
 
       it "Provides quick links to view an article" do
         within('table.manage_articles') do
-          click_on("View", match: :first)
+          click_on(Article.first.title)
         end
         expect(current_path).to eq(article_path(article1))
       end

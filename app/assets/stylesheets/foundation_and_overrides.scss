@@ -40,8 +40,8 @@ $row-width: 100%;
 // Global
 
 // We use these to control various global styles
-$body-bg: rgb(162, 119, 88);
-$body-font-color: #660000;
+$body-bg: #2F251F;  // Dark Brown
+$body-font-color: $body-bg;
 $body-font-family: "Bookman", "Palatino", serif;
 
 // $body-font-weight: normal;
@@ -56,9 +56,8 @@ $body-font-family: "Bookman", "Palatino", serif;
 // $default-float: left;
 
 // We use these as default colors throughout
-$primary-color: #FFDA8B;
-$secondary-color: #660000;
-$green: #9EC080;
+$primary-color: #FFDA8B;  // Light Orange
+$secondary-color: #681F0F;  // Dark Red
 // $alert-color: #f04124;
 $success-color: #8FC892;
 $warning-color: #8F1F0F;
@@ -118,11 +117,13 @@ $medium-range: (25.063em, 64em);    // Large cell phones and small tablets
 //
 // TYPOGRAPHY
 //
+// Import Permanent Marker from google fonts
+@import url("http://fonts.googleapis.com/css?family=Permanent+Marker");
 
 // $include-html-type-classes: $include-html-classes;
 
 // We use these to control header font styles
-// $header-font-family: $body-font-family;
+$header-font-family: "Permanent Marker", cursive;
 // $header-font-weight: normal;
 // $header-font-style: normal;
 $header-font-color: $primary-color;
@@ -508,7 +509,6 @@ div.mce-container, div.mce-container-body, div.mce-btn > button {
   background-color: lighten($primary-color, 10%);
 }
 
-
 // We use these to style the labels in different ways
 // $form-label-pointer: pointer;
 // $form-label-font-size: rem-calc(14);
@@ -828,6 +828,15 @@ $panel-bg: $primary-color;
 $panel-font-color: $secondary-color;
 // $panel-font-color-alt: #fff;
 
+.panel {
+  a {
+    color: $secondary-color;
+  }
+  a:hover {
+    color: lighten($secondary-color, 20%);
+  }
+}
+
 // $panel-header-adjust: true;
 // $callout-panel-link-color: $primary-color;
 
@@ -960,7 +969,7 @@ $side-nav-link-color: $secondary-color;
 // $side-nav-font-size: rem-calc(14);
 $side-nav-font-weight: bold;
 // $side-nav-font-weight-active: $side-nav-font-weight;
-// $side-nav-font-family: $body-font-family;
+$side-nav-font-family: $header-font-family;
 // $side-nav-active-font-family: $side-nav-font-family;
 
 
@@ -1105,7 +1114,7 @@ th, td {
 }
 
 // These control the table head styles
-$table-head-bg: lighten($body-bg, 20%)  ;
+$table-head-bg: $secondary-color;
 // $table-head-font-size: rem-calc(14);
 $table-head-font-color: $primary-color;
 // $table-head-font-weight: bold;
