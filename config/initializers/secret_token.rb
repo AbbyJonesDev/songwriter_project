@@ -9,5 +9,5 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-SongwriterProject::Application.config.secret_key_base = "3cfd4bfbf4b9f9dee57763b501bb1a43102288d0a906e13a9c2b0b3123b352a90120fcba637cd401f12fc5ff4383c4325cc6234f6fdde27222575693c9eb27f8"
-  # Rails.env.test? ? "83b0f863dc24531d93de0a4e3f2276" : ENV['SECRET_TOKEN']
+SongwriterProject::Application.config.secret_key_base = 
+  Rails.env.test? ? "83b0f863dc24531d93de0a4e3f2276" : ENV['SECRET_TOKEN']
