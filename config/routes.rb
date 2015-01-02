@@ -1,11 +1,13 @@
 SongwriterProject::Application.routes.draw do
-  resources :articles
 
   get "dashboard/index"
   devise_for :admin
   root 'static_pages#home'
   get '/bio' => 'static_pages#bio'
 
+
+  resources :articles
+  get 'load_entry' => 'articles#load_entry'
 
   resources :songs
 

@@ -6,6 +6,14 @@ class ArticlesController < ApplicationController
   # GET /articles.json
   def index
     @articles = Article.all
+    @selected = Article.last
+  end
+
+  def load_entry
+    @selected = Article.find(params[:id])
+    respond_to do |format|
+      format.js
+    end
   end
 
   # GET /articles/1

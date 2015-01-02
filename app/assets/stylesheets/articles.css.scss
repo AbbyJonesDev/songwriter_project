@@ -1,4 +1,29 @@
 // Place all the styles related to the Articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#journal {
+  height: rem-calc(646px);
+  background-image: image-url("open_journal.png");
+  background-size: rem-calc(964px) rem-calc(646px);
+  background-position: center;
+  background-repeat: no-repeat;
+}
 
+#journal-contents, #journal-entry {
+  height: rem-calc(550px);
+  margin-top: rem-calc(30px);
+  padding: rem-calc(25px);
+  overflow: auto;
+
+  h1 {
+    font-size: $h2-font-size;
+  }
+
+  li, a, p, h1, h2, h3, h4, h5, h6 {
+    color: $brown;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+}

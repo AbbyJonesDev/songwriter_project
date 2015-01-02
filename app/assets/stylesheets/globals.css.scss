@@ -1,5 +1,12 @@
 @import "foundation_and_overrides";
 
+// Colors
+$brown: #2F251F;
+$light-orange: #FFDA8B;  // Light Orange
+$dark-red: #681F0F;  // Dark Red
+
+
+// Layout
 form {
   border: rem-calc(2px) solid $primary-color;
   padding: rem-calc(4px);
