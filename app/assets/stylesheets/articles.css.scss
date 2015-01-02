@@ -62,3 +62,14 @@
     overflow: auto;
   }
 }
+
+#single-journal-entry {
+  width: 90%;
+  margin: 0 auto;
+  padding: 3%;
+  background-image: image-url("open_journal_sample.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  
+  h1 { color: $brown }
+}
