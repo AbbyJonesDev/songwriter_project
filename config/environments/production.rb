@@ -19,6 +19,10 @@ SongwriterProject::Application.configure do
   # For large-scale production use, consider using a caching reverse proxy like nginx, varnish or squid.
   # config.action_dispatch.rack_cache = true
 
+  # Set default url for emails sent from Devise
+  config.action_mailer.default_url_options = { host: 'morning-bayou-4029.herokuapp.com' }
+
+
   # Disable Rails's static asset server (Apache or nginx will already do this).
   config.serve_static_assets = false
 

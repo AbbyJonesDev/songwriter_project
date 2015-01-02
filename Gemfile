@@ -46,6 +46,7 @@ gem 'tinymce-rails'
 
 group :development do
   gem 'coffee-rails', '~> 4.0.0'    # Use CoffeeScript for .js.coffee assets and views
+  gem "letter_opener" # Open emails in the browser instead of sending them
 end
 
 
