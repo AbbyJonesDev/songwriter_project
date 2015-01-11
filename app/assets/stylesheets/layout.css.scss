@@ -3,9 +3,11 @@ body {
 }
 
 #phone-navbar {
+  margin-top: 0;
+  
   h1 {
-    width: 85%;
-    margin-left: 0;
+    text-align: left;
+    font-weight: bold;
   }
 
   * { 
