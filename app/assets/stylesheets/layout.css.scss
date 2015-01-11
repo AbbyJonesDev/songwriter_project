@@ -2,10 +2,16 @@ body {
   // background-image: image-url("background_texture.png");
 }
 
-#site-title {
-  background-image: image-url('tweed.png');
-  background-size: 5% 5%;
-  color: $brown;
+#phone-navbar {
+  h1 {
+    width: 85%;
+    margin-left: 0;
+  }
+
+  * { 
+    color: $light-orange; 
+    background-color: $dark-red;
+  }
 }
 
 nav {

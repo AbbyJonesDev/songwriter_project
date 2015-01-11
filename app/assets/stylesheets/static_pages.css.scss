@@ -21,3 +21,29 @@
     padding-right: rem-calc(40px);
   }
 }
+
+#phone-home {
+
+  h2 {
+    color: $brown;
+    margin: rem-calc(50px) auto;
+    padding: rem-calc(10px);
+    height: rem-calc(200px);
+    width: rem-calc(300px);
+    background-repeat: no-repeat;
+    background-position: center;    
+  }
+
+  #music-link {
+    background-image: image-url("radio.png");
+  }
+
+  #blog-link {
+    background-image: image-url('open_journal_page.png');
+  }
+
+  #contact-link {
+    background-image: image-url('pencil.png');
+  }
+
+}

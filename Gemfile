@@ -24,6 +24,9 @@ gem 'sass-rails', '~> 4.0.0'
 # Use Zurb Foundation
 gem 'foundation-rails', '~> 5.2.2.0'
 
+# User browser gem for user-agent detection
+gem 'browser', '~> 0.8.0'
+
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 
