@@ -2,6 +2,12 @@ body {
   // background-image: image-url("background_texture.png");
 }
 
+#site-title {
+  background-image: image-url('tweed.png');
+  background-size: 5% 5%;
+  color: $brown;
+}
+
 nav {
   color: $header-font-color;
   font-family: $header-font-family;
