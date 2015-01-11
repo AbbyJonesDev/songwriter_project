@@ -1,0 +1,14 @@
+<main>
+
+  <div id="phone-journal">
+    <h1 class="text-center">
+      Table of Contents
+    </h1>
+    <ul>
+      <% @articles.each do |article| %>
+        <li> <%= link_to article.title, article %> </li>
+      <% end %>
+    </ul>
+  </div>
+
+</main>
