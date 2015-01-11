@@ -1,13 +1,13 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 4.2.0'
+gem 'rails', '~> 4.1.9'
 
 # Use pg as the database for Active Record
-gem 'pg'
+gem 'pg', '~> 0.17.1'
 
 # Use Figaro to load ENV variables for given environment
-gem 'figaro'
+gem 'figaro', '~> 0.7.0'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -16,13 +16,13 @@ gem 'uglifier', '>= 1.3.0'
 # gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
-gem 'jquery-rails'
+gem 'jquery-rails', '~> 3.1.0'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'  
 
 # Use Zurb Foundation
-gem 'foundation-rails'
+gem 'foundation-rails', '~> 5.2.2.0'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
@@ -34,13 +34,13 @@ gem 'jbuilder', '~> 1.2'
 gem "paperclip", "~> 4.1"
 
 # Use Amazon Web Services S3 storage for file attachments
-gem 'aws-sdk'
+gem 'aws-sdk', '~> 1.60.2'
 
 # Use Devise for Admin and User authentication
-gem 'devise'
+gem 'devise', '~> 3.2.4'
 
 # Use tinyMCE to add rich text editor for blog posts
-gem 'tinymce-rails'
+gem 'tinymce-rails', '~> 4.0.19'
 
 
 
@@ -57,13 +57,11 @@ group :test do
 end
 
 group :development, :test do
-  gem 'dotenv-rails'  # To manage personal environment variables
-  gem 'factory_girl_rails'
+  gem 'factory_girl_rails', '~> 4.4.1'
   gem 'rspec-rails', '~> 3.0.0.beta'
-  gem 'capybara'  # To simulate user interaction with browser
-  gem 'capybara-webkit'  # For pages with JavaScript - so they load in real webpage
-  gem 'database_cleaner'  # To clean database after capybara-webkit messes it up
-  gem 'selenium-webdriver'   # For pages with JavaScript
+  gem 'capybara', '~> 2.2.1'  # To simulate user interaction with browser
+  gem 'capybara-webkit', '~> 1.1.0'  # For pages with JavaScript - so they load in real webpage
+  gem 'database_cleaner', '~> 1.2.0'  # To clean database after capybara-webkit messes it up
   gem 'debugger'
 end
 
