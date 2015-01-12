@@ -25,4 +25,8 @@ form {
       background-color: darken($primary-color, 10%);
     }
   }
+
+  input[type="file"] {
+    background-color: $primary-color;
+  }
 }
