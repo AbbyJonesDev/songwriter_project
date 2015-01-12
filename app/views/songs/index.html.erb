@@ -1,33 +1,42 @@
-<h1 class="text-center"> Songs </h1>
+<div class="panel">
+  <h1 class="text-center"> Music </h1>
 
-<table class="text-center">
-  <thead>
-    <tr>
-      <th> Title </th>
-      <th> Description </th>
-      <% if admin_signed_in? %>
-        <th colspan=2> Manage </th>
-      <% end %>
-    </tr>
-  </thead>
+  <div class="row">
+    <article class="small-12 columns">
+      <p>
+        Thanks for taking the time to check out the music. These songs were birthed over years of worshipping with friends and singing spontaneous songs to the Lord. I'm in "phase one" of getting these arranged and recorded. What you'll find here are a collection of works in progress, from raw scratch tracks to (hopefully soon!) mature recordings. New songs and updated versions will appear periodically. Eventually there'll be a CD. 
+      </p>
+      <p>
+        Finishing a song is a funny idea. Songs seem to have a life of their own. The more you sing them, the more you discover each one's individual personality. Perhaps that's what we'll capture here. 
+      </p>
+      <p>
+        If you like a song and use it in your own worship setting, please let me know how it's working out for you. If by chance you want to include any of my songs in your own project, just email me and we'll work out the permissions.
+      </p>
+    </article>
+  </div>
 
-  <tbody>
-    <% @songs.each do |song| %>
-      <tr>
-        <td><%= link_to song.title, song %></td>
-        <td><%=raw song.writeup %></td>        
-        <% if admin_signed_in? %>
-          <td> <%= link_to 'Edit', edit_song_path(song) %></td>
-          <td><%= link_to 'Delete', song, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end %>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <div class="row">
+    <div class="medium-6 columns">
+      <iframe id="sc-player" height="450" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/53906921&amp;color=681f0f&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
+    </div>
 
-<br>
-
-<% if admin_signed_in? %>
-  <%= link_to 'New Song', new_song_path %>
-<% end %>
-
+    <div class="medium-6 columns">
+      <table id="chord-charts">
+        <thead>
+          <tr>
+          <th class="text-center">Chord Charts</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @songs.each do |song| %>
+            <tr>
+            <td>
+              <%= link_to song.title, song.chords.url, target: '_blank' %> 
+            </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
