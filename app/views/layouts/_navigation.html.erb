@@ -1,13 +1,12 @@
 <nav role="navigation">
   <ul class="main-nav">
-    <li><a href="/"> Home </a></li>
-    <li><a href="/songs"> Music </a></li>
-    <li><a href="/articles"> Blog </a></li>
-    <li><a href="/bio"> About </a></li>
-    <li><a href="#"> Calendar </a></li>
-    <li><a href="#"> Pictures </a></li>
+    <li> <%= link_to "Home", '/' %> </li>
+    <li> <%= link_to "Music", '/songs' %> </li>
+    <li> <%= link_to "Blog", '/articles' %> </li>
+    <li> <%= link_to "Contact", '#' %> </li>
   </ul>
 </nav>
+
 
 <!-- CHANGE TO HIDDEN LINK IN TABLE -->
 <% if admin_signed_in? %>
