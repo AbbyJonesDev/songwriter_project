@@ -18,18 +18,24 @@ SongwriterProject::Application.configure do
   # Add `rack-cache` to your Gemfile before enabling this.
   # For large-scale production use, consider using a caching reverse proxy like nginx, varnish or squid.
   # config.action_dispatch.rack_cache = true
-
   # Set default url for emails sent from Devise
-  config.action_mailer.default_url_options = { host: 'http://morning-bayou-4029.herokuapp.com' }
-  config.action_mailer.delivery_method = :sendmail
-  # Defaults to:
-  # config.action_mailer.sendmail_settings = {
-  #   location: '/usr/sbin/sendmail',
-  #   arguments: '-i -t'
-  # }
+  config.action_mailer.default_url_options = { 
+    host: ENV['EMAIL_HOST'] }
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.default_options = {from: 'no-reply@brianmaymusic.net'}
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address:              'smtp.sendgrid.net',
+    port:                 '587',
+    domain:               'heroku.com',
+    user_name:            ENV['SENDGRID_USERNAME'],
+    password:             ENV['SENDGRID_PASSWORD'],
+    authentication:       'plain',
+    enable_starttls_auto: true  }
+  config.action_mailer.default_options = { 
+    from: ENV['EMAIL_FROM'], 
+    reply_to: ENV['EMAIL_REPLY_TO']}
+
 
   # Disable Rails's static asset server (Apache or nginx will already do this).
   config.serve_static_assets = false

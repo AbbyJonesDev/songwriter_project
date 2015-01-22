@@ -16,9 +16,12 @@ production:
   S3_BUCKET_NAME: "your bucket name"
   AWS_ACCESS_KEY_ID: "your aws access key id"
   AWS_SECRET_ACCESS_KEY: "your aws secret access key"
-
-
-
+# Email
+  EMAIL_FROM: 'your_name@your-domain.com'
+  EMAIL_REPLY_TO: 'your_name@your-domain.com'
+  EMAIL_HOST: 'http://your-domain.com'
+  SENDGRID_USERNAME: 'your sendgrid username'
+  SENDGRID_PASSWORD: 'your sendgrid password'
 
 
 # DEVELOPMENT VALUES
@@ -27,9 +30,12 @@ development:
   S3_BUCKET_NAME: "your bucket name"
   AWS_ACCESS_KEY_ID: "your aws access key id"
   AWS_SECRET_ACCESS_KEY: "your aws secret access key"
-
-
-
+# Email
+  EMAIL_FROM: 'your_name@your-domain.com'
+  EMAIL_REPLY_TO: 'your_name@your-domain.com'
+  EMAIL_HOST: 'http://your-domain.com'
+  SENDGRID_USERNAME: 'your sendgrid username'
+  SENDGRID_PASSWORD: 'your sendgrid password'
 
 
 
