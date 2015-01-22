@@ -28,10 +28,10 @@ class SongsController < ApplicationController
     @song = Song.new(song_params)
     if @song.save
       flash[:notice] = "Song was successfully created"
-      redirect_to @song
+      redirect_to admin_path
     else
       # Prevent Paperclip from producing duplicate errors
-      @song.errors.delete(:chords) && @song.errors.delete(:mp3) 
+      @song.errors.delete(:chords)
       render action: 'new'
     end
   end
@@ -42,10 +42,10 @@ class SongsController < ApplicationController
     @song = Song.find params[:id]
     if @song.update(song_params)
       flash[:notice] = "Song was successfully updated"
-      redirect_to @song
+      redirect_to admin_path
     else
       # Prevent Paperclip from producing duplicate errors
-      @song.errors.delete(:chords) && @song.errors.delete(:mp3)
+      @song.errors.delete(:chords)
       render action: "edit"
     end
   end
@@ -68,6 +68,6 @@ class SongsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def song_params
-      params.require(:song).permit(:title, :writeup, :mp3, :chords)
+      params.require(:song).permit(:title, :writeup, :mp3_link, :chords)
     end
 end

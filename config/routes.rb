@@ -9,7 +9,7 @@ SongwriterProject::Application.routes.draw do
   resources :articles
   get 'load_entry' => 'articles#load_entry'
 
-  resources :songs
+  resources :songs, except: :show
 
 
   namespace :admin do |admin|
