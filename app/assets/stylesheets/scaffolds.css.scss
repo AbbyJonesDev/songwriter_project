@@ -2,6 +2,11 @@
   padding: 2px;
   background-color: #91200F;
   display: table;
+  width: 100%;
+
+  label {
+    color: white;
+  }
 }
 
 #error_explanation {

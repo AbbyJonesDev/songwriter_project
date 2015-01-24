@@ -6,12 +6,7 @@ class ContactsController < ApplicationController
   end
 
   def create
-    @contact = Contact.new(
-      # Use hash to sanitize parameters...
-      name: params[:contact][:name],
-      email: params[:contact][:email],
-      message: params[:contact][:message]
-      )
+    @contact = Contact.new(contact_params)
     if @contact.save
       ContactMailer.send_message(@contact)
       flash[:notice] = "Your message has been sent. Thanks for getting in touch."
