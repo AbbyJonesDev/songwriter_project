@@ -1,0 +1,27 @@
+<div class="panel">
+  <h1>Message</h1>
+  <br>
+
+  <p>
+    <strong>Date:</strong>
+   <%= date_to_s(@contact.created_at) %> 
+  </p>
+
+  <p>
+    <strong>Name:</strong>
+    <%= @contact.name %> 
+  </p>
+
+  <p>
+    <strong>Email:</strong>
+    <%= @contact.email %> 
+  </p>
+
+  <div>
+    <p><strong>Message:</strong></p>
+    <%= @contact.message %>
+
+  </div>
+</div>
+
+<%= link_to "Contact Log", contacts_path %>

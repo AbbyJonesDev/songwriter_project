@@ -11,6 +11,7 @@ SongwriterProject::Application.routes.draw do
 
   resources :songs, except: :show
 
+  resources :contacts, except: [:edit, :update, :delete]
 
   namespace :admin do |admin|
     get '', to: 'dashboard#index', as: '/' 

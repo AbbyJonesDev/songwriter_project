@@ -1,0 +1,26 @@
+// Place all the styles related to the Contacts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#contact-form {
+  width: 90%;
+  margin: 0 auto;
+  padding: 3%;
+  background-image: image-url("open_journal_sample.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  
+  h1, p, label { color: $brown }
+
+  form, input, textarea {
+    border-color: $brown;
+  }
+
+  textarea {
+    min-height: rem-calc(300px);
+  }
+
+  input[type='submit'] { background-color: lighten($light-orange, 5%);}
+  input[type='submit']:hover { 
+    background-color: $light-orange;
+  }
+}

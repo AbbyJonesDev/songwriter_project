@@ -1,0 +1,25 @@
+<h1>Contact Log</h1>
+
+<table class="small-12 columns">
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Name</th>
+      <th>Email Address</th>
+      <th>Message Preview</th>
+    </tr>
+    <tbody>
+      <% @contacts.each do |contact| %>
+      <tr>
+        <td><%= link_to date_to_s(contact.created_at), contact %></td>
+        <td><%= contact.name %></td>
+        <td><%= contact.email %></td>
+        <td>
+          <%= contact.message_preview %>
+          <i><%= link_to "More...", contact %></i>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </thead>
+</table>

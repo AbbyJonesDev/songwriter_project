@@ -18,6 +18,7 @@ production:
   AWS_SECRET_ACCESS_KEY: "your aws secret access key"
 # Email
   EMAIL_FROM: 'your_name@your-domain.com'
+  EMAIL_TO: 'address where emails from contact form should be sent'
   EMAIL_REPLY_TO: 'your_name@your-domain.com'
   EMAIL_HOST: 'http://your-domain.com'
   SENDGRID_USERNAME: 'your sendgrid username'
@@ -32,6 +33,7 @@ development:
   AWS_SECRET_ACCESS_KEY: "your aws secret access key"
 # Email
   EMAIL_FROM: 'your_name@your-domain.com'
+  EMAIL_TO: 'address where emails from contact form should be sent'
   EMAIL_REPLY_TO: 'your_name@your-domain.com'
   EMAIL_HOST: 'http://your-domain.com'
   SENDGRID_USERNAME: 'your sendgrid username'
@@ -45,3 +47,8 @@ test:
   S3_BUCKET_NAME: "your bucket name"
   AWS_ACCESS_KEY_ID: "your aws access key id"
   AWS_SECRET_ACCESS_KEY: "your aws secret access key"
+  # Email
+  EMAIL_FROM: 'your_name@your-domain.com'
+  EMAIL_TO: 'address where emails from contact form should be sent'
+  EMAIL_REPLY_TO: 'your_name@your-domain.com'
+  EMAIL_HOST: 'http://your-domain.com'
