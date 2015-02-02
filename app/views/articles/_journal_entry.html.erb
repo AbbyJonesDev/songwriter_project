@@ -1,6 +1,6 @@
   <article id="journal-entry" class="medium-5 small-12 columns end">
     <h1 class="text-center">
-      <%= selected.title if selected %>
+      <%= link_to selected.title, article_path(selected) if selected %>
     </h1>
     <%= selected.content.html_safe if selected %>
   </article>
