@@ -1,3 +1,53 @@
-  <%= image_tag('home.png', 
-    :alt => "Table with records, journal, coffee cup, camera, and almanac",
-    :usemap => "#homepage") %>
+ <map name="homepage">
+  <area data-key="music" shape="rect" alt="Music" coords="324,45,630,290" href="/songs">
+  <area data-key="music" shape="poly" alt="Music" coords="536,586,552,585,571,585,583,589,596,584,617,582,633,584,650,592,667,603,680,622,690,645,690,665,683,687,675,707,657,723,651,727,648,751,641,769,624,791,606,804,576,811,543,803,514,786,494,756,491,728,492,706,481,681,479,659,488,629,505,605" href="/songs">
+  <area data-key="contact" shape="circle" alt="Contact" coords="788,699,50" href="/contact">
+  <area data-key="blog" shape="poly" alt="Blog" coords="675,304,837,372,747,582,587,518" href="/articles">
+  <area data-key="photos" shape="poly" coords="188,431,214,371,206,370,217,346,224,351,301,381,304,380,324,386,346,399,306,488,270,476,261,475" href="#" alt="Coming later...">
+  <area data-key="photos" shape="poly" coords="360,461,375,455,375,451,393,447,394,439,422,443,440,439,440,441,454,442,458,445,474,445,468,522,464,541,464,543,432,543,388,553" href="#" alt="Coming later...">
+  <area data-key="calendar" shape="poly" coords="177,568,328,522,399,742,251,784" href="#" alt="Coming later...">
+</map>
+
+<%= image_tag('home.jpg', 
+  :alt => "Table with records, journal, coffee cup, camera, and almanac",
+  :id => "homepage",
+  :size => '1000x841',
+  :usemap => "#homepage") 
+%>
+
+<script>
+  $('img').mapster({
+    fillColor: 'FFDA8B',
+    fillOpacity: 0.1,
+    stroke: true,
+    strokeColor: '2F251F',
+    strokeOpacity: 1,
+    strokeWidth: 3,
+    clickNavigate: true,
+    showToolTip: true,
+    toolTipContainer: '<div style="background-color: #FFDA8B; padding: 5px"></div>',
+    mapKey: 'data-key',
+    areas: [
+      {
+        key: 'music',
+        toolTip: 'Original music and chord charts'
+      },
+      {
+        key: 'contact',
+        toolTip: "Say hello"
+      },
+      {
+        key: 'blog',
+        toolTip: "Wit, wisdom, and rants"
+      },
+      {
+        key: 'photos',
+        toolTip: 'Photos coming later...'
+      },
+      {
+        key: 'calendar',
+        toolTip: "Calendar coming later..."
+      }
+    ]
+  });
+</script>

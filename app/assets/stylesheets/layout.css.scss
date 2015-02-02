@@ -2,6 +2,11 @@ body {
   // background-image: image-url("background_texture.png");
 }
 
+img#homepage, div#mapster_wrap_0 {
+  display: block;
+  margin: 0 auto;
+}
+
 #phone-navbar {
   margin-top: 0;
   width: 100%;

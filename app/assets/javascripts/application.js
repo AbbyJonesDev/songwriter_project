@@ -16,5 +16,7 @@
 //= require foundation
 //= require turbolinks
 //= require_tree .
+// Vendor Files
+//= require jquery.imagemapster.min
 
 $(function(){ $(document).foundation(); });
