@@ -1,19 +1,16 @@
 source 'https://rubygems.org'
-
+ruby '2.2.4'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 4.1.9'
 
 # Use pg as the database for Active Record
-gem 'pg', '~> 0.17.1'
+gem 'pg'
 
 # Use Figaro to load ENV variables for given environment
 gem 'figaro', '~> 0.7.0'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
-
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails', '~> 3.1.0'
@@ -48,7 +45,6 @@ gem 'tinymce-rails', '~> 4.0.19'
 
 
 group :development do
-  gem 'coffee-rails', '~> 4.0.0'    # Use CoffeeScript for .js.coffee assets and views
   gem "letter_opener" # Open emails in the browser instead of sending them
 end
 
@@ -60,12 +56,13 @@ group :test do
 end
 
 group :development, :test do
-  gem 'factory_girl_rails', '~> 4.4.1'
-  gem 'rspec-rails', '~> 3.0.0.beta'
-  gem 'capybara', '~> 2.2.1'  # To simulate user interaction with browser
-  gem 'capybara-webkit', '~> 1.1.0'  # For pages with JavaScript - so they load in real webpage
-  gem 'database_cleaner', '~> 1.2.0'  # To clean database after capybara-webkit messes it up
-  gem 'debugger'
+  gem 'factory_girl_rails'
+  gem 'rspec-rails'
+  gem 'capybara'  # To simulate user interaction with browser
+  gem 'capybara-webkit'  # For pages with JavaScript - so they load in real webpage
+  gem 'database_cleaner'  # To clean database after capybara-webkit messes it up
+  gem 'jazz_hands', github: 'nixme/jazz_hands', branch: 'bring-your-own-debugger'
+  gem 'pry-byebug'
 end
 
 gem 'rails_12factor', group: :production # To make app work on Heroku
